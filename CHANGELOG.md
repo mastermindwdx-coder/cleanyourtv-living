@@ -19,3 +19,7 @@
 ### 2026-10-27 私有预览准备
 
 按维护者要求先上传到私有仓库，公开时间另行决定。README、Agent 约定和发布指南记录私有边界；不包含任何个人配置、密钥、电影壁纸或私人 Git 历史，应用代码和版本不变。
+
+### 2026-10-27 私有上传完成
+
+349个文件已导入 `mastermindwdx-coder/cleanyourtv-living` 的 `main` 分支，可见性保持 Private。首次 GitHub Actions 的源码检查和 Android 测试/构建均通过；通过后仅补充本次验证记录，未改应用代码，未创建公开 Release。完整结果见 VERIFICATION.md。
