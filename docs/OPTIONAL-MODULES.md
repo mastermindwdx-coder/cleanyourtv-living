@@ -24,6 +24,10 @@
 
 作者使用 Chrome/Firefox 完成电视显示地址与新连接码的正常授权后登录成功；先前拒绝的具体根因没有确认。需要本人授权，不能要求把账号密码、验证码或令牌提交到 Issue。登录后选择本人允许的内容实播，观察画面及时间推进，不用列表加载替代播放验证。
 
+## 实时网速与自动选线
+
+SmartTube第二份可选补丁新增加载时的“实时网速＋缓存秒数”，恢复播放自动隐藏。网络迁移工具新增`--selection-file`，可把本人测过的候选转为自动选择组，并保留故障回退和手动模式。按[播放与自动选线](PLAYBACK-NETWORK.md)准备私有候选JSON和验证，不把节点延迟当作视频吞吐。
+
 ## 个人 Clash / Mihomo 配置
 
 客户端来源 [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)，本机记录版本 2.11.36；[dependencies.json](../companion/dependencies.json) 是曾验证的下载记录，不保证未来兼容或最新。

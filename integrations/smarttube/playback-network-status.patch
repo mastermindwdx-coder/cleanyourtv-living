@@ -1,0 +1,357 @@
+diff --git a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/exoplayer/other/DebugInfoManager.java b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/exoplayer/other/DebugInfoManager.java
+--- a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/exoplayer/other/DebugInfoManager.java
++++ b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/exoplayer/other/DebugInfoManager.java
+@@ -4,6 +4,8 @@
+ import android.content.Context;
+ import android.graphics.Color;
+ import android.net.Uri;
++import com.liskovsoft.smartyoutubetv2.common.utils.AppDownloadSpeed;
++import com.liskovsoft.smartyoutubetv2.common.utils.DownloadRate;
+ import android.os.Build.VERSION;
+ import android.text.TextUtils;
+ import android.util.TypedValue;
+@@ -69,6 +71,7 @@
+     private final Context mContext;
+ 
+     private boolean mStarted;
++    private final AppDownloadSpeed mDownloadSpeed = new AppDownloadSpeed();
+     private LinearLayout column1;
+     private LinearLayout column2;
+     private UhdHelper mUhdHelper;
+@@ -122,6 +125,7 @@
+         }
+ 
+         mStarted = true;
++        mDownloadSpeed.reset();
+         mDebugViewGroup.setVisibility(View.VISIBLE);
+         mUhdHelper = new UhdHelper(mContext);
+         mPlayer.addListener(this);
+@@ -286,6 +290,11 @@
+     }
+ 
+     private void appendRuntimeInfo() {
++        double speed = mDownloadSpeed.sample();
++        appendRow(mContext.getString(R.string.local_app_download_speed),
++                Double.isNaN(speed) ? mContext.getString(R.string.local_speed_waiting) : DownloadRate.format(speed));
++        appendRow(mContext.getString(R.string.local_buffer_seconds),
++                String.format(Locale.ROOT, "%.1f", Math.max(0, mPlayer.getTotalBufferedDuration()) / 1000.0));
+         DecoderCounters counters = mPlayer.getVideoDecoderCounters();
+         if (counters == null)
+             return;
+diff --git a/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackFragment.java b/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackFragment.java
+--- a/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackFragment.java
++++ b/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackFragment.java
+@@ -114,6 +114,8 @@
+     private ExoPlayerInitializer mPlayerInitializer;
+     private SubtitleManager mSubtitleManager;
+     private DebugInfoManager mDebugInfoManager;
++    private PlaybackNetworkStatus mNetworkStatus;
++    private View mLoadingSpinner;
+     private UriBackgroundManager mBackgroundManager;
+     private RowsSupportFragment mRowsSupportFragment;
+     private boolean mIsUIAnimationsEnabled = false;
+@@ -170,7 +172,7 @@
+ 
+         // We should use internal progress manager because it's used in many places like Exo engine etc.
+         // ProgressBar.setRootView already called at this moment.
+-        ProgressBarManager.setup(getProgressBarManager(), (ViewGroup) root);
++        mLoadingSpinner = ProgressBarManager.setup(getProgressBarManager(), (ViewGroup) root);
+ 
+         return root;
+     }
+@@ -232,6 +234,7 @@
+ 
+         // NOTE: don't move this into another place! Multiple components rely on it.
+         mPlaybackPresenter.onViewResumed();
++        if (mNetworkStatus != null) mNetworkStatus.start();
+ 
+         showHideWidgets(true); // PIP mode fix
+         blockEngine(false); // reset bg mode
+@@ -244,6 +247,7 @@
+ 
+         // NOTE: don't move this into another place! Multiple components rely on it.
+         mPlaybackPresenter.onViewPaused();
++        if (mNetworkStatus != null) mNetworkStatus.stop();
+ 
+         if (Util.SDK_INT <= 23) {
+             maybeReleasePlayer();
+@@ -439,6 +443,10 @@
+             mDebugInfoManager.show(false);
+             mDebugInfoManager = null;
+         }
++        if (mNetworkStatus != null) {
++            mNetworkStatus.destroy();
++            mNetworkStatus = null;
++        }
+         mPlayerInitializer.release();
+         // Fix access calls when player isn't initialized
+         mExoPlayerController.release();
+@@ -459,6 +467,10 @@
+         createPlayer();
+ 
+         createPlayerGlue();
++        if (getView() instanceof ViewGroup) {
++            mNetworkStatus = new PlaybackNetworkStatus((ViewGroup) getView(), mLoadingSpinner, mPlayer);
++            mNetworkStatus.start();
++        }
+ 
+         //createSubtitleManager();
+ 
+diff --git a/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/mod/leanback/misc/ProgressBarManager.java b/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/mod/leanback/misc/ProgressBarManager.java
+--- a/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/mod/leanback/misc/ProgressBarManager.java
++++ b/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/mod/leanback/misc/ProgressBarManager.java
+@@ -147,9 +147,10 @@
+         mPosition = position;
+     }
+ 
+-    public static void setup(androidx.leanback.app.ProgressBarManager manager, ViewGroup rootView) {
+-        if (rootView != null) {
+-            manager.setProgressBarView(createProgressBar(rootView, Gravity.CENTER));
+-        }
++    public static View setup(androidx.leanback.app.ProgressBarManager manager, ViewGroup rootView) {
++        if (rootView == null) return null;
++        View spinner = createProgressBar(rootView, Gravity.CENTER);
++        manager.setProgressBarView(spinner);
++        return spinner;
+     }
+ }
+diff --git a/common/src/main/res/values/local_messages.xml b/common/src/main/res/values/local_messages.xml
+--- a/common/src/main/res/values/local_messages.xml
++++ b/common/src/main/res/values/local_messages.xml
+@@ -6,4 +6,8 @@
+     <string name="local_reload_attempt">Refreshing playback information (attempt %1$d)…</string>
+     <string name="local_service_wait">The video service asked the player to wait (attempt %1$d).</string>
+     <string name="local_format_error">Unable to load playback information. Reopen the video or check your connection.</string>
++    <string name="local_app_download_speed">SmartTube network speed</string>
++    <string name="local_buffer_seconds">Playable buffer (seconds)</string>
++    <string name="local_speed_waiting">Measuring…</string>
++    <string name="local_loading_network">Loading…\nNetwork speed %1$s · Buffer %2$.1f s</string>
+ </resources>
+diff --git a/common/src/main/res/values-zh/local_messages.xml b/common/src/main/res/values-zh/local_messages.xml
+--- a/common/src/main/res/values-zh/local_messages.xml
++++ b/common/src/main/res/values-zh/local_messages.xml
+@@ -6,4 +6,8 @@
+     <string name="local_reload_attempt">正在重新获取播放信息（第 %1$d 次）…</string>
+     <string name="local_service_wait">视频服务要求稍候，正在恢复播放（第 %1$d 次）。</string>
+     <string name="local_format_error">无法获取播放信息。请重新打开视频，或检查网络连接。</string>
++    <string name="local_app_download_speed">SmartTube 实时网速</string>
++    <string name="local_buffer_seconds">可播放缓存（秒）</string>
++    <string name="local_speed_waiting">正在测量…</string>
++    <string name="local_loading_network">正在加载…\n实时网速 %1$s · 已缓存 %2$.1f 秒</string>
+ </resources>
+diff --git a/smarttubetv/build.gradle b/smarttubetv/build.gradle
+--- a/smarttubetv/build.gradle
++++ b/smarttubetv/build.gradle
+@@ -58,7 +58,7 @@
+         minSdkVersion project.properties.minSdkVersion
+         targetSdkVersion project.properties.targetSdkVersion
+         versionCode 2459
+-        versionName "32.68-local.2"
++        versionName "32.68-local.4"
+         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+         buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
+ 
+diff --git a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/DownloadRate.java b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/DownloadRate.java
+new file mode 100644
+--- /dev/null
++++ b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/DownloadRate.java
+@@ -0,0 +1,35 @@
++package com.liskovsoft.smartyoutubetv2.common.utils;
++
++import java.util.Locale;
++
++/** Measures byte-counter deltas. No bandwidth estimates and no network requests. */
++public final class DownloadRate {
++    private long previousBytes = -1;
++    private long previousTimeMs = -1;
++
++    public void reset() {
++        previousBytes = -1;
++        previousTimeMs = -1;
++    }
++
++    public double sample(long receivedBytes, long elapsedRealtimeMs) {
++        if (receivedBytes < 0 || elapsedRealtimeMs < 0) {
++            reset();
++            return Double.NaN;
++        }
++        long deltaMs = elapsedRealtimeMs - previousTimeMs;
++        double rate = Double.NaN;
++        if (previousBytes >= 0 && receivedBytes >= previousBytes && deltaMs > 0 && deltaMs <= 5000) {
++            rate = (receivedBytes - previousBytes) * 1000.0 / deltaMs;
++        }
++        previousBytes = receivedBytes;
++        previousTimeMs = elapsedRealtimeMs;
++        return rate;
++    }
++
++    public static String format(double bytesPerSecond) {
++        if (Double.isNaN(bytesPerSecond) || Double.isInfinite(bytesPerSecond) || bytesPerSecond < 0) return "—";
++        if (bytesPerSecond >= 1024 * 1024) return String.format(Locale.ROOT, "%.2f MB/s", bytesPerSecond / (1024 * 1024));
++        return String.format(Locale.ROOT, "%.1f KB/s", bytesPerSecond / 1024);
++    }
++}
+diff --git a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/AppDownloadSpeed.java b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/AppDownloadSpeed.java
+new file mode 100644
+--- /dev/null
++++ b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/AppDownloadSpeed.java
+@@ -0,0 +1,14 @@
++package com.liskovsoft.smartyoutubetv2.common.utils;
++
++import android.net.TrafficStats;
++import android.os.Process;
++import android.os.SystemClock;
++
++/** Own-UID received traffic, including video, audio, thumbnails and request overhead. */
++public final class AppDownloadSpeed {
++    private final DownloadRate rate = new DownloadRate();
++    public void reset() { rate.reset(); }
++    public double sample() {
++        return rate.sample(TrafficStats.getUidRxBytes(Process.myUid()), SystemClock.elapsedRealtime());
++    }
++}
+diff --git a/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackNetworkStatus.java b/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackNetworkStatus.java
+new file mode 100644
+--- /dev/null
++++ b/smarttubetv/src/main/java/com/liskovsoft/smartyoutubetv2/tv/ui/playback/PlaybackNetworkStatus.java
+@@ -0,0 +1,110 @@
++package com.liskovsoft.smartyoutubetv2.tv.ui.playback;
++
++import android.graphics.Color;
++import android.graphics.drawable.GradientDrawable;
++import android.os.SystemClock;
++import android.util.Log;
++import android.view.Gravity;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.FrameLayout;
++import android.widget.TextView;
++
++import com.google.android.exoplayer2.Format;
++import com.google.android.exoplayer2.Player;
++import com.google.android.exoplayer2.SimpleExoPlayer;
++import com.liskovsoft.smartyoutubetv2.common.utils.AppDownloadSpeed;
++import com.liskovsoft.smartyoutubetv2.common.utils.DownloadRate;
++import com.liskovsoft.smartyoutubetv2.tv.R;
++import java.util.Locale;
++
++/** Non-focusable loading status. Never reads URLs, account identifiers or VPN configuration. */
++final class PlaybackNetworkStatus implements Runnable, Player.EventListener {
++    private final ViewGroup root;
++    private final View spinner;
++    private final SimpleExoPlayer player;
++    private final TextView label;
++    private final AppDownloadSpeed speed = new AppDownloadSpeed();
++    private boolean running;
++    private double lastRate = Double.NaN;
++    private long lastLogMs;
++
++    PlaybackNetworkStatus(ViewGroup root, View spinner, SimpleExoPlayer player) {
++        this.root = root;
++        this.spinner = spinner;
++        this.player = player;
++        label = new TextView(root.getContext());
++        label.setTextColor(Color.WHITE);
++        label.setTextSize(16);
++        label.setGravity(Gravity.CENTER);
++        label.setFocusable(false);
++        label.setClickable(false);
++        label.setPadding(dp(16), dp(8), dp(16), dp(8));
++        GradientDrawable bg = new GradientDrawable();
++        bg.setColor(0xD922252B);
++        bg.setCornerRadius(dp(8));
++        label.setBackground(bg);
++        label.setVisibility(View.GONE);
++        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
++                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
++        root.addView(label, params);
++        label.setTranslationY(dp(80));
++    }
++
++    private int dp(int value) { return Math.round(value * root.getResources().getDisplayMetrics().density); }
++
++    void start() {
++        if (running) return;
++        running = true;
++        speed.reset();
++        lastRate = Double.NaN;
++        player.addListener(this);
++        run();
++    }
++
++    void stop() {
++        running = false;
++        root.removeCallbacks(this);
++        player.removeListener(this);
++        label.setVisibility(View.GONE);
++    }
++
++    void destroy() {
++        stop();
++        root.removeView(label);
++    }
++
++    @Override public void onPlayerStateChanged(boolean playWhenReady, int playbackState) { updateLabel(); }
++
++    private long bufferMs() { return Math.max(0, player.getTotalBufferedDuration()); }
++
++    private void updateLabel() {
++        boolean buffering = player.getPlaybackState() == Player.STATE_BUFFERING;
++        boolean waiting = player.getPlaybackState() == Player.STATE_IDLE && spinner != null && spinner.isShown();
++        if (!running || !(buffering || waiting)) {
++            label.setVisibility(View.GONE);
++            return;
++        }
++        String rate = Double.isNaN(lastRate) ? root.getContext().getString(R.string.local_speed_waiting) : DownloadRate.format(lastRate);
++        label.setText(root.getContext().getString(R.string.local_loading_network, rate, bufferMs() / 1000.0));
++        label.setVisibility(View.VISIBLE);
++    }
++
++    @Override public void run() {
++        if (!running) return;
++        lastRate = speed.sample();
++        updateLabel();
++        long now = SystemClock.elapsedRealtime();
++        if (now - lastLogMs >= 5000) {
++            lastLogMs = now;
++            Format format = player.getVideoFormat();
++            // Local diagnostics only: deliberately excludes titles, video IDs, URLs and account data.
++            Log.i("PlaybackNetwork", String.format(Locale.ROOT,
++                    "state=%d play=%s rx_Bps=%.0f buffer_ms=%d position_ms=%d quality=%dx%d fps=%.0f bitrate=%d",
++                    player.getPlaybackState(), player.getPlayWhenReady(), lastRate, bufferMs(), player.getCurrentPosition(),
++                    format == null ? 0 : format.width, format == null ? 0 : format.height,
++                    format == null ? 0 : format.frameRate, format == null ? 0 : format.bitrate));
++        }
++        root.postDelayed(this, 1000);
++    }
++}
+diff --git a/local-tests/DownloadRateTest.java b/local-tests/DownloadRateTest.java
+new file mode 100644
+--- /dev/null
++++ b/local-tests/DownloadRateTest.java
+@@ -0,0 +1,25 @@
++import com.liskovsoft.smartyoutubetv2.common.utils.DownloadRate;
++public final class DownloadRateTest {
++    private static int count;
++    private static void check(boolean pass) { if (!pass) throw new AssertionError("Case " + (count + 1)); count++; }
++    public static void main(String[] args) {
++        DownloadRate rate = new DownloadRate();
++        check(Double.isNaN(rate.sample(100, 1000)));
++        check(rate.sample(1124, 2000) == 1024);
++        check(rate.sample(3172, 4000) == 1024);
++        check(rate.sample(3172, 5000) == 0);
++        check(Double.isNaN(rate.sample(10, 6000)));
++        check(Double.isNaN(rate.sample(-1, 7000)));
++        check(Double.isNaN(rate.sample(10, 8000)));
++        check(Double.isNaN(rate.sample(20, 8000)));
++        check(Double.isNaN(rate.sample(30, 14000)));
++        rate.reset();
++        check(Double.isNaN(rate.sample(40, 15000)));
++        check(DownloadRate.format(1024).equals("1.0 KB/s"));
++        check(DownloadRate.format(1048576).equals("1.00 MB/s"));
++        check(DownloadRate.format(0).equals("0.0 KB/s"));
++        check(DownloadRate.format(Double.NaN).equals("—"));
++        check(DownloadRate.format(Double.POSITIVE_INFINITY).equals("—"));
++        System.out.println("DownloadRate: " + count + " cases passed");
++    }
++}

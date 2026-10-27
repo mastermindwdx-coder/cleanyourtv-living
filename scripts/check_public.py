@@ -69,9 +69,10 @@ def validate(root=ROOT):
     ns='{http://schemas.android.com/apk/res/android}'
     if any(p.get(ns+'name')=='android.permission.INTERNET' for p in launcher.findall('uses-permission')):
         errors.append('Launcher unexpectedly requests INTERNET')
-    patch=(root/'integrations/smarttube/chinese-prompts.patch').read_text(encoding='utf-8')
-    if 'GIT binary patch' in patch or re.search(r'^diff --git .*\.(png|webp|jpg)',patch,re.M):
-        errors.append('SmartTube patch contains image replacement')
+    for patch_file in (root/'integrations/smarttube').glob('*.patch'):
+        patch=patch_file.read_text(encoding='utf-8')
+        if 'GIT binary patch' in patch or re.search(r'^diff --git .*\.(png|webp|jpg)',patch,re.M):
+            errors.append('SmartTube patch contains image replacement: '+patch_file.name)
     for p in (root/'.github/workflows').glob('*'):
         text=p.read_text(encoding='utf-8')
         if 'pull_request_target' in text or 'contents: write' in text:errors.append('Unexpected publishing workflow authority: '+p.name)

@@ -11,6 +11,16 @@ from check_public import private_path, validate
 from export_source import export
 
 class PublicExportTests(unittest.TestCase):
+    def test_second_smarttube_patch_is_also_checked(self):
+        with tempfile.TemporaryDirectory() as folder:
+            target=Path(folder)
+            for rel in json.loads((ROOT/'public-files.json').read_text())['files']:
+                p=target/rel;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/rel,p)
+            with (target/'integrations/smarttube/playback-network-status.patch').open('a',encoding='utf-8') as stream:
+                stream.write('\nGIT binary patch\n')
+            result=validate(target)
+            self.assertFalse(result['ok'])
+            self.assertIn('SmartTube patch contains image replacement: playback-network-status.patch',result['errors'])
     def test_private_paths_are_never_exportable(self):
         for name in ['../private.yaml','/absolute/key','private/subscription.yaml','launcher/app/local/key.jks',
                      'companion/android/local.properties','key.p12','app.apk','.env','tools/adbkey/adbkey']:

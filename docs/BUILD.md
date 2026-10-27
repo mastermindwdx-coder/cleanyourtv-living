@@ -31,7 +31,7 @@ Debug 生成 app-debug.apk（开发签名，可安装）；未提供签名时 Re
 
 ## CI 做什么
 
-`.github/workflows/ci.yml` 运行定向 Python 测试、公开文件检查、两个 Android 项目的构建/lint、桌面 JVM 测试、APK 体积检查、中文格式化检查。上传测试报告和开发/未签名构建供审阅，不自动创建 Release 或对电视安装。没有复制上游维护者机器人。
+`.github/workflows/ci.yml` 运行定向 Python 测试、公开文件检查、两个 Android 项目的构建/lint、桌面 JVM 测试、APK 体积检查、中文格式化与实际下载速率计量检查。上传测试报告和开发/未签名构建供审阅，不自动创建 Release 或对电视安装。没有复制上游维护者机器人。
 
 本仓库是核心源码提取，不带上游完整 examples/themes/addons 及依赖其表格的 Python 全量套件；不宣称通过那些测试。需要研究原完整工程可按 THIRD_PARTY_NOTICES.md 中固定提交获取。CI 文件已准备不等于 GitHub 云端已跑绿，当前验证见 VERIFICATION.md。
 

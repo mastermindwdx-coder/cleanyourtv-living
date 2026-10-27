@@ -92,6 +92,7 @@ adb -s TV_SERIAL shell wm size
 | 应用栏位置不对/加号看不到 | rows_below_dock、行数、初始焦点和上下滚动 | `LocalHomeUiTest.java`、`DockSlotsTest.java`、`GridNavigationTest.java` |
 | HDMI 黑屏/抓屏为空 | 真实画面/声音是否正常、输入服务/原桌面是否保留 | `InputSourcesTest.java` 与上游固定提交的 `docs/devices/`；受保护画面抓不到不等于没画面，不随意停用输入服务 |
 | SmartTube 403/持续缓冲 | 同片同画质测试、网络引擎、节点、时间、客户端版本 | 记录变量，每次只改一个；本机 1080p60 已播，4K60 未通过，不外推所有电视 |
+| 加载只有转圈 / 网速为0 | 应用接收速度、可播放缓存、实际进度及候选线路吞吐 | [实时网速与自动选线](PLAYBACK-NETWORK.md)；缓存充足时0速正常，先保存旧配置，不按延迟单指标宣称最快 |
 | DRM 失败 | 正常应用上下文中的 MediaDrm 结果，而非只有 shell 探针 | 本机 Widevine 初始化失败只是此固件的现状；不让登录重试掩盖系统问题 |
 | 恢复时状态与快照冲突 | 当前状态是否已被用户/系统改变 | `clean_snapshot.py`、`test_clean_tv.py`；恢复自己的增量，保留别人的修改，冲突停在具体项目 |
 
