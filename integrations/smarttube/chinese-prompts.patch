@@ -1,0 +1,290 @@
+diff --git a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/models/playback/controllers/ErrorFixerController.java b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/models/playback/controllers/ErrorFixerController.java
+index 40558f9..2839b95 100644
+--- a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/models/playback/controllers/ErrorFixerController.java
++++ b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/models/playback/controllers/ErrorFixerController.java
+@@ -17,6 +17,7 @@ import com.liskovsoft.smartyoutubetv2.common.misc.BufferingDetector.OnLongBuffer
+ import com.liskovsoft.smartyoutubetv2.common.prefs.PlayerData;
+ import com.liskovsoft.smartyoutubetv2.common.prefs.PlayerTweaksData;
+ import com.liskovsoft.smartyoutubetv2.common.utils.Utils;
++import com.liskovsoft.smartyoutubetv2.common.utils.ChinesePlaybackErrors;
+ import com.liskovsoft.youtubeapi.service.YouTubeServiceManager;
+ 
+ import java.util.List;
+@@ -64,7 +65,7 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+             if (!isCustomDnsActive && !getPlayerTweaksData().isNetworkErrorFixingDisabled()) {
+                 // Wrong DNS resolving could cause hanging at start
+                 // Do switch to only engine that respects custom DNS settings
+-                MessageHelpers.showLongMessage(getContext(), "Fixing incorrect DNS resolution. App restart needed...");
++                MessageHelpers.showLongMessage(getContext(), getContext().getString(R.string.local_fix_dns));
+                 getPlayerTweaksData().setPlayerDataSource(requiredEngine);
+                 getPlayerTweaksData().setPreferredDnsType(customDns);
+                 if (!isCustomDnsEnabled) {
+@@ -75,7 +76,7 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+                 }
+             } else {
+                 // Also, some clients like ANDROID_REEL may just hang at start
+-                MessageHelpers.showLongMessage(getContext(), "Fixing stalled client...");
++                MessageHelpers.showLongMessage(getContext(), getContext().getString(R.string.local_fix_stall));
+                 YouTubeServiceManager.instance().switchNextClientNow();
+                 mVideoLoaderController.reloadVideo();
+             }
+@@ -179,7 +180,7 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+             return false;
+         }
+ 
+-        MessageHelpers.showLongMessage(getContext(), "%s. Attempt: %s", reloadError.getMessage(), mSabrErrorFixAttempts);
++        MessageHelpers.showLongMessage(getContext(), getContext().getString(R.string.local_reload_attempt, mSabrErrorFixAttempts));
+ 
+         YouTubeServiceManager.instance().reloadPlayerResponse(video.videoId, reloadError.reloadPlaybackToken);
+         mVideoLoaderController.reloadVideo();
+@@ -214,7 +215,7 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+             return false;
+         }
+ 
+-        MessageHelpers.showLongMessage(getContext(), "%s. Attempt: %s", backoffError.getMessage(), mSabrErrorFixAttempts);
++        MessageHelpers.showLongMessage(getContext(), getContext().getString(R.string.local_service_wait, mSabrErrorFixAttempts));
+ 
+         // SABR may hang if the server issues a high backoffTime
+         mVideoLoaderController.reloadVideo();
+@@ -227,7 +228,9 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+         boolean showMessage = true;
+         String errorContent = error != null ? error.getMessage() : null;
+         String errorTitle = getErrorTitle(type, rendererIndex);
+-        String errorMessage = errorTitle + "\n" + errorContent;
++        java.util.Locale locale = getContext().getResources().getConfiguration().locale;
++        String fallback = ChinesePlaybackErrors.enabled(locale) ? errorTitle : errorTitle + "\n" + errorContent;
++        String errorMessage = ChinesePlaybackErrors.format(error, fallback, locale);
+ 
+         if (Helpers.startsWithAny(errorContent, "Unable to connect to")) {
+             // No internet connection or WRONG DATE on the device
+@@ -313,7 +316,7 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+         if (showMessage) {
+             MessageHelpers.showLongMessage(getContext(), errorMessage);
+             if (getPlayer() != null) {
+-                getPlayer().setTitle(errorContent);
++                getPlayer().setTitle(errorMessage);
+             }
+         }
+ 
+@@ -390,11 +393,14 @@ public class ErrorFixerController extends BasePlayerController implements OnLong
+         String className = error.getClass().getSimpleName();
+         String fullMsg = String.format("loadFormatInfo error: %s: %s", className, Utils.getStackTraceAsString(error));
+         Log.e(TAG, fullMsg);
++        java.util.Locale locale = getContext().getResources().getConfiguration().locale;
++        String displayMessage = ChinesePlaybackErrors.format(error,
++                ChinesePlaybackErrors.enabled(locale) ? getContext().getString(R.string.local_format_error) : fullMsg, locale);
+ 
+         if (!Helpers.containsAny(message, "fromNullable result is null")) {
+-            MessageHelpers.showLongMessage(getContext(), fullMsg);
++            MessageHelpers.showLongMessage(getContext(), displayMessage);
+             if (getPlayer() != null) {
+-                getPlayer().setTitle(fullMsg);
++                getPlayer().setTitle(displayMessage);
+             }
+         }
+ 
+diff --git a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/presenters/dialogs/AppUpdatePresenter.java b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/presenters/dialogs/AppUpdatePresenter.java
+index 7cf23d1..e1173ed 100644
+--- a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/presenters/dialogs/AppUpdatePresenter.java
++++ b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/app/presenters/dialogs/AppUpdatePresenter.java
+@@ -49,6 +49,10 @@ public class AppUpdatePresenter extends BasePresenter<Void> implements AppUpdate
+     }
+ 
+     public void start(boolean forceCheck) {
++        if ("org.cleantv.smarttube".equals(getContext().getPackageName())) {
++            if (forceCheck) MessageHelpers.showLongMessage(getContext(), R.string.local_update_notice);
++            return;
++        }
+         mIsForceCheck = forceCheck;
+ 
+         if (forceCheck) {
+diff --git a/common/src/main/res/values-zh/strings.xml b/common/src/main/res/values-zh/strings.xml
+index 9d4998d..44a6a9d 100644
+--- a/common/src/main/res/values-zh/strings.xml
++++ b/common/src/main/res/values-zh/strings.xml
+@@ -332,9 +332,9 @@
+   <string name="keyboard_auto_show">自动显示键盘</string>
+   <string name="cancel_dialog">取消</string>
+   <string name="msg_player_error_source2">URL无法访问或设备​​时间不正确。\n通常是应用BUG。</string>
+-  <string name="msg_player_error_video_source">视频URL无法访问或设备时间不正确。\n通常是应用BUG。</string>
+-  <string name="msg_player_error_audio_source">音频URL无法访问或设备时间不正确。\n通常是应用BUG。</string>
+-  <string name="msg_player_error_subtitle_source">字幕URL无法访问或设备时间不正确。\n通常是应用BUG。</string>
++  <string name="msg_player_error_video_source">无法加载视频画面，请重新打开视频或检查网络。</string>
++  <string name="msg_player_error_audio_source">无法加载音轨，请重新打开视频或更换音频格式。</string>
++  <string name="msg_player_error_subtitle_source">无法加载字幕，请暂时关闭字幕后重试。</string>
+   <string name="hide_upcoming">隐藏订阅分区的即将上线</string>
+   <string name="hide_upcoming_channel">隐藏频道分区的即将上线</string>
+   <string name="hide_upcoming_home">隐藏首页的即将上线</string>
+@@ -602,7 +602,7 @@
+   <string name="header_shorts">短视频</string>
+   <string name="player_global_focus">在播放器按钮行之间无缝导航</string>
+   <string name="remember_position_subscriptions">记住上次在订阅中浏览的位置</string>
+-  <string name="msg_player_unknown_error">未知错误</string>
++  <string name="msg_player_unknown_error">暂时无法播放，请重新打开视频。</string>
+   <string name="header_notifications">通知</string>
+   <string name="disable_search_history">禁用搜索历史记录</string>
+   <string name="unlock_high_bitrate_formats">解锁1080p高码率vp9格式</string>
+@@ -656,8 +656,8 @@
+   <string name="import_subscriptions_group">导入</string>
+   <string name="you_liked">你点赞过的</string>
+   <string name="oculus_quest_fix">修复Oculus Quest</string>
+-  <string name="unknown_source_error">未知来源错误</string>
+-  <string name="unknown_renderer_error">未知渲染器错误</string>
++  <string name="unknown_source_error">无法加载播放资源，请重新打开视频或检查网络。</string>
++  <string name="unknown_renderer_error">画面或声音解码失败，请尝试其他视频格式。</string>
+   <string name="without_picture">无图</string>
+   <string name="playback_buffering_fix">修复播放缓冲</string>
+   <string name="auto_history">自动（使用账号设定）</string>
+diff --git a/smarttubetv/build.gradle b/smarttubetv/build.gradle
+index 3664bfd..fddd4d6 100644
+--- a/smarttubetv/build.gradle
++++ b/smarttubetv/build.gradle
+@@ -57,8 +57,8 @@ android {
+         applicationId "app.smarttube"
+         minSdkVersion project.properties.minSdkVersion
+         targetSdkVersion project.properties.targetSdkVersion
+-        versionCode 2458
+-        versionName "32.68"
++        versionCode 2459
++        versionName "32.68-local.2"
+         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+         buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
+ 
+@@ -168,7 +168,7 @@ android {
+             targetSdkVersion project.properties.compileSdkVersion
+         }
+         stfdroid {
+-            applicationId "app.smarttube.fdroid"
++            applicationId "org.cleantv.smarttube"
+             minSdkVersion 21
+             targetSdkVersion project.properties.compileSdkVersion
+ 
+diff --git a/smarttubetv/src/stfdroid/res/values/strings.xml b/smarttubetv/src/stfdroid/res/values/strings.xml
+index d5bcc69..10b9a3d 100644
+--- a/smarttubetv/src/stfdroid/res/values/strings.xml
++++ b/smarttubetv/src/stfdroid/res/values/strings.xml
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-    <string translatable="false" name="app_name"><![CDATA[SmartTube F-Droid]]></string>
+-    <string translatable="false" name="browse_title"><![CDATA[SmartTube F-Droid]]></string>
++    <string translatable="false" name="app_name"><![CDATA[SmartTube 中文版]]></string>
++    <string translatable="false" name="browse_title"><![CDATA[SmartTube 中文版]]></string>
+ </resources>
+diff --git a/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/ChinesePlaybackErrors.java b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/ChinesePlaybackErrors.java
+new file mode 100644
+--- /dev/null
++++ b/common/src/main/java/com/liskovsoft/smartyoutubetv2/common/utils/ChinesePlaybackErrors.java
+@@ -0,0 +1,49 @@
++package com.liskovsoft.smartyoutubetv2.common.utils;
++
++import java.net.ConnectException;
++import java.net.SocketTimeoutException;
++import java.net.UnknownHostException;
++import java.util.Collections;
++import java.util.IdentityHashMap;
++import java.util.Locale;
++import java.util.Set;
++import java.util.regex.Matcher;
++import java.util.regex.Pattern;
++
++/** User-facing translation only. The original exception still drives recovery and logging. */
++public final class ChinesePlaybackErrors {
++    private static final Pattern HTTP = Pattern.compile(
++            "(?:Response code\\s*:|HTTP(?:/\\d(?:\\.\\d)?)?\\s+|status(?: code)?\\s*[:=])\\s*([45]\\d{2})\\b",
++            Pattern.CASE_INSENSITIVE);
++
++    private ChinesePlaybackErrors() { }
++
++    public static boolean enabled(Locale locale) {
++        return locale != null && "zh".equals(locale.getLanguage());
++    }
++
++    public static String format(Throwable error, String fallback, Locale locale) {
++        if (!enabled(locale)) return fallback;
++        Set<Throwable> seen = Collections.newSetFromMap(new IdentityHashMap<Throwable, Boolean>());
++        String network = null;
++        for (Throwable cause = error; cause != null && seen.add(cause); cause = cause.getCause()) {
++            Matcher match = HTTP.matcher(String.valueOf(cause.getMessage()));
++            if (match.find()) {
++                int code = Integer.parseInt(match.group(1));
++                switch (code) {
++                    case 403: return "无法加载视频，服务器拒绝了请求（403）。请重新打开视频；若仍失败，请切换网络节点后重试。";
++                    case 404: return "未找到播放资源（404）。请重新打开视频。";
++                    case 410: return "播放资源已失效（410）。请重新打开视频。";
++                    case 429: return "请求过于频繁（429），请稍后重试。";
++                    default: return code >= 500 ? "视频服务暂时不可用（" + code + "），请稍后重试。"
++                            : "播放请求失败（" + code + "）。请重新打开视频。";
++                }
++            }
++            if (cause instanceof SocketTimeoutException) network = "加载视频超时，请检查网络或切换节点后重试。";
++            else if (cause instanceof UnknownHostException) network = "无法解析视频服务器地址，请检查网络和 DNS 设置。";
++            else if (cause instanceof ConnectException) network = "无法连接视频服务器，请检查网络连接。";
++            else if (cause instanceof javax.net.ssl.SSLException) network = "无法建立安全连接，请检查电视的日期、时间和网络。";
++        }
++        return network != null ? network : fallback;
++    }
++}
+diff --git a/common/src/main/res/values/local_messages.xml b/common/src/main/res/values/local_messages.xml
+new file mode 100644
+--- /dev/null
++++ b/common/src/main/res/values/local_messages.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="local_update_notice">Update this local edition using a newer local-edition APK.</string>
++    <string name="local_fix_dns">Adjusting DNS settings; the app may restart.</string>
++    <string name="local_fix_stall">Reloading stalled playback…</string>
++    <string name="local_reload_attempt">Refreshing playback information (attempt %1$d)…</string>
++    <string name="local_service_wait">The video service asked the player to wait (attempt %1$d).</string>
++    <string name="local_format_error">Unable to load playback information. Reopen the video or check your connection.</string>
++</resources>
+diff --git a/common/src/main/res/values-zh/local_messages.xml b/common/src/main/res/values-zh/local_messages.xml
+new file mode 100644
+--- /dev/null
++++ b/common/src/main/res/values-zh/local_messages.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="local_update_notice">这是本地中文版，请使用新的中文版安装包更新。</string>
++    <string name="local_fix_dns">正在调整 DNS 设置，应用可能会重新启动。</string>
++    <string name="local_fix_stall">播放加载停滞，正在重新加载…</string>
++    <string name="local_reload_attempt">正在重新获取播放信息（第 %1$d 次）…</string>
++    <string name="local_service_wait">视频服务要求稍候，正在恢复播放（第 %1$d 次）。</string>
++    <string name="local_format_error">无法获取播放信息。请重新打开视频，或检查网络连接。</string>
++</resources>
+diff --git a/local-tests/ChinesePlaybackErrorsTest.java b/local-tests/ChinesePlaybackErrorsTest.java
+new file mode 100644
+--- /dev/null
++++ b/local-tests/ChinesePlaybackErrorsTest.java
+@@ -0,0 +1,30 @@
++import com.liskovsoft.smartyoutubetv2.common.utils.ChinesePlaybackErrors;
++import java.net.SocketTimeoutException;
++import java.net.UnknownHostException;
++import java.util.Locale;
++
++public class ChinesePlaybackErrorsTest {
++    private static int count;
++    private static void check(boolean value) {
++        count++;
++        if (!value) throw new AssertionError("Case " + count);
++    }
++    public static void main(String[] args) {
++        Throwable wrapped = new RuntimeException("Source error", new Exception("Response code: 403"));
++        String msg = ChinesePlaybackErrors.format(wrapped, "无法播放", Locale.SIMPLIFIED_CHINESE);
++        check(msg.contains("服务器拒绝") && msg.contains("403") && !msg.contains("Source error"));
++        check(ChinesePlaybackErrors.format(new Exception("HTTP 429"), "fallback", Locale.CHINESE).contains("稍后重试"));
++        check(ChinesePlaybackErrors.format(new Exception("status code: 503"), "fallback", Locale.CHINESE).contains("503"));
++        check(ChinesePlaybackErrors.format(new RuntimeException(new SocketTimeoutException()), "fallback", Locale.CHINESE).contains("超时"));
++        check(ChinesePlaybackErrors.format(new UnknownHostException("private-host.example"), "fallback", Locale.CHINESE).contains("DNS"));
++        check(!ChinesePlaybackErrors.format(new UnknownHostException("private-host.example"), "fallback", Locale.CHINESE).contains("private-host"));
++        check(ChinesePlaybackErrors.format(new Exception("video 403 frames"), "fallback", Locale.CHINESE).equals("fallback"));
++        check(ChinesePlaybackErrors.format(wrapped, "Source error", Locale.US).equals("Source error"));
++        check(ChinesePlaybackErrors.format(null, "无法播放", Locale.CHINESE).equals("无法播放"));
++        Throwable a = new Exception("one");
++        Throwable b = new Exception("two", a);
++        a.initCause(b);
++        check(ChinesePlaybackErrors.format(a, "fallback", Locale.CHINESE).equals("fallback"));
++        System.out.println(count + " checks passed");
++    }
++}

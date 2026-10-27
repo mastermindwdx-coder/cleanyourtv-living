@@ -1,0 +1,1543 @@
+{
+  "cleanYourTVCommit": "f592b6d2db0cfa0e28779660f25ff65386a5ff9b",
+  "aerialCommit": "2f54aafa3aba8ba6f8d588b6983a45198cea12b4",
+  "smartTubeCommit": "94553dd7151e8a911926ef2c9e3ef30fca007b48",
+  "imported_files": [
+    {
+      "path": "launcher/app/build.gradle",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5ed88b9e0ff12d6918de83774a6cf15f32940dc884fa9a6a2c9f5680753941ff"
+    },
+    {
+      "path": "launcher/app/lint.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "db0a6f98c3b92b00acf197c654fb6506a43905d6efc03d4185e30886e9b7e583"
+    },
+    {
+      "path": "launcher/app/proguard-rules.pro",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "329dc72d7de1b03db56f11d4426f1a1bc01e7846316779b43d68ea43deca6c39"
+    },
+    {
+      "path": "launcher/app/src/main/AndroidManifest.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c0ca9bcde032fa31e879b58a23d55b0bd46c3c7346cd0c44afec5f484666f2df"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/AppAdapter.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ec8975dd9706405037dd679b15ad884800f5a7188ed5427ad229484b30853e5d"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/AppLaunchActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78d0c001384e81c53c820eb3812ca3edd87a48ba388f1516a621e6d22fe384a1"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/AppLibraryDialog.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6737acfd221404727dc24d0eee0748ab753ecdd8f1b449850487b69a56902333"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/BellDrawable.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "4390897eea2eb549fd5ad76d32d9103b64cff0bfb10cdebe2fca8f9cbf936067"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CardFeature.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2e83605997e61d1164b73faf49ae9a953a1b9cf30b59eca76b8d9390c2a5a4a9"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Cards.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "badb0c72142cad49004d9d236ef86f3402c14e2f174d722365cabd72d4e55d2d"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CleanActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "69527b0ee0829cfd2ddecea9fd989f9a0935e705c3f9ae0f1b64ad184283e67f"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CleanBootReceiver.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ffda6c8fa38aecf911f9b0c2afdc12ad3adf42173105e588083b916c6d8ea11c"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CleanHomeController.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "17330d5201ed04cfb94ae482bfed0338914ef7882db5cbc54e00191238b97550"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CleanHomeMode.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "00698c12fbd8037df12e9c078dcb4b09bae38b43f75de12f5f3e273e3a2b7b60"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CleanReceiver.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "69e50ab4ae999ebfd1b1714913abd33dbbe17f32ba10f36f89bbb9ef9074520a"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CleanState.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c3d92798540fb0f16d18062ef192cf3da89e76bf344d54ed7d4c96ffe368004f"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ClockActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "bcdb4feb7bf3a50248245029114be69ce86ed79fa5dfca3014150a3219548418"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ClockDream.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "76e39fbab9376593038c7bc39ab820c7e4b9d34733ce15d802b07b955dd0397b"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ClockScene.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c846e8371728df9aeeea1ee422909961d5e817009cacd8791c1347842d4e4061"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Config.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5e3e3654be855ad8f40ce78568616cb4e4a362527a01faad45067b5d13282f27"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/CoocaaSources.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6695f2e8d30f7330d007377f8fc52c5cea63c7e9775f8c0fed9e62b675205691"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/DiyaDrawable.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cb360a7388261d54510fd805cd9ff87700bd3b0265ebb7408a2de3e77104f761"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/DockDecoration.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "3adcf4d1668e7c0984969ee5f72f0f1e7ee25ec5fbe52a4c201879e744dd828a"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/DockSlots.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "21e6ed544270f8399b63492ed45c350285f212910ac7e43d2b18bace25c1a463"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Festival.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1d57191719bfc52a352cd076bf0b456522c46d439cffe6a64335d3647bcf9e8c"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/GamepadPassthrough.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ba5d5b67cab751921ef0538c86cf809f016cca7cd89090264ce9bd760856af20"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/GlassView.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78e992340cfefca500f0745a47ebc50fe2d33a20e8492fb3fb97e08756ffce1d"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/GridNavigation.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "abde796a0b850c5e90378c5bdb0dec3507b4f90c07f2b31f4f15ec00cbe24cc6"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/GuardConfig.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "04fcc32fa553996645ecdc4c9ffae4ce1ad4d5eec179b6b10aa1eaa513240e8a"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/GuardKeep.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "3ba9f81db2c50d2ea72dcbe3d7d501ee8fed844289f2a4aef6b45fa7d8017eeb"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/GuardRevival.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "a5262b13a4985f6f9b9f9d3092b62bcc930a2cf5242110b100db7a5869d47e0d"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/HeroArt.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "18c7ab150bc7171519ec7d6a44175b16fde80f84d39eb97144e3985717018de1"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/HomeKeyService.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1bf0355d0215d3735681f0f6aa874ccc6efd548957f3fe378a7ac7899918a169"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/HomePressSequence.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "648cf4b81b6db77d3d86493eb2eacba722e6d46c516ad8d1330d6a384a5197d0"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/HomeSettingsActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "dd31e7ffcbff26596641853b56c624cb2c74658b527ce67f23b2a58a81c96135"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/InputKeyService.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1196519624fcf37c725bcfa2a2b6b285f05396ea3ab9e5945de89dedb68f9779"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/InputNames.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f558180111f520ce7fd879454c9b382f72b1b404d60751dd757cb99b7f7318b3"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/InputSources.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2eca8e08409a36ab87a515c11f0a81c3846132c403ba1288056b99967a7d6df8"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/InputsRequestActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "9235f104831ec3a6030762923c68ea10ecd66318c534f3a2e4e2297774b00ed2"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/LastOpened.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cf4bdab5c9484cd267ee113c797e7b742dcf0534edfea3e2da01a6e97ca0fcac"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/LaunchActions.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5e37067640d6bd1a71c304c2dcf6199e7e3ef57a9368c08bced053b051932bc6"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/LauncherLocale.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "92e0ff670d885a3ca88f528d178f0e56c3c2a9e02af2a0aab4c961ef9cb34417"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/LauncherSettingsActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "9efc1f4cb1925ed5ea7ace152250d2e86f334a0e63226796b0465391445d40d9"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/LibraryApps.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e4e5ea9aabe3866f261e892fd5176c407ec5f65ae85ab92e0af43565bb5f621f"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/LibraryLoads.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cc50d8e3cb36a95e0c7e20ffaf3fa0ea494aee89fa4dbd7abfb33baea18ee4a7"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Lunar.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f36e6081a61f658976713e14fa0d34f0682aa4c33494d1b4803d3e6d0f4f1d1d"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/MainActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1879a4b15afcdb8bf7ebb8cfc22e24822b1f48481e1c5e559d2ccac4732bce83"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/MarigoldDrawable.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "a592bcc7a4da8729fa25a105817f496921ce569a433ed950b047e98b4f4b01ae"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/MemoryTrimPolicy.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "0437b9af98a4ed667b6199e78042151f22dde43fe452058276b640d11f799e84"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Motion.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "46cb60932dfb77ed4dd8335344ec988edbffe80a7eac4acc856af151637ec3d6"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/NavigationPulse.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ba83f348e351b3a0d4040fd5205de3da1f9ff421c50d0ebe3522dc0af2a5c0c6"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/OpenOnStart.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ad5f17fd76b562c3a50f585f1348aa48924bad9134e08fb9e8ec1cd7ee686a04"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Order.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f787494c79cb3aa494116d9111b0a9f68c269c64fc341a5d688120eb44d17aca"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/PetalShowerView.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "aca13ea3876364d5dd62420b9ceb4af9cd562d231eadddbc02fba145c17bcf79"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ProbeActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ef03470f9a74096bb95489301566cf5ed4c825c7e4f80678d481ecf7561a8779"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/QuickSettingsActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "06d055d6d966b143faf28d8b1028880a1a0d801f5daf1ab18cc630ca3cfb516c"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/RaceWeekend.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b647e9176c491994b9fa814a4bda9c5ac4cd89bb90c81aeba13dcc2ce1b3158a"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/RemoteKeys.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b9d16969abbe496a4769ced7032986610eef086221331fb1fa92cbf3af5d0ed6"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ServiceRepair.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "092701b48294af6a0d257e78e072fbfb7caf29c1887b6fce1fe3c8e61b5a2a15"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Shamsi.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "867851ecc9327e673d04612c542a72b567f1eab9fa3f76b4bfe8d0e1f808d2f2"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Sky.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "7237ce274d757f97ffa40a6bc90ed4d7cf57b1b7ba827a83522c136aec6a09ec"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/SkyView.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ef6348859c5219f30ed719b2004ab303a35865c205f7dcae9f7f897b5cd82412"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/StatsText.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1a9b9484dc36c9a9827d396e2690a7a4b1653acb9c0745b425965d040b56ebff"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/Sun.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "34d0c4865227a3c32dd76d21cc12efdfb3daac203193d13f2664f384d10d780b"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/SystemSettings.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2b4ac718a6019a685301c0611dffb29e1afe72108c2b691ebbbb34577a512dc2"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ThemeFiles.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "730300d74164674ed7d508d14891326bb29887e173809ab996b6012e1df33377"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/ThemeProvider.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "bfc5ebcabc2e71d7ca7ec58d14a6fe62eb30acd342ab60647b59662de0160e17"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/TileRefresh.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "44ba6a952253586c6a8da6b6b2ae953675269b9f0d6c65b5558a8a23a66204e5"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/TopFade.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "81c457a06ce33999aa44c594407366d781626974bf32a00e35ab201842afed3a"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/UiFont.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78d81f5aaa414b44baea267d877d9ab05764b8b23c9d06c055b04960867308a9"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/VideoWallpaper.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "9f8ea6fcf7790206d2022836dbb29abec2eb1fa899937ee44fa3ece5e5597334"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/VideoWallpaperActivity.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ef4d3cc8da404977d89fea34d09bceafe72d88920024e60c62aa335b180535e7"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/VolumeKeys.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cb88b2f4d21372556936bbdbb2d9336a44d56658a8de70da4214eb159f5a4768"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/VpnBadge.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5eeffdbf80cef0ad24e1990dd2dfd71e8460d9f38e4b4ae9dabef938c862275c"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/WallpaperCaptions.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1fc9f6132b18991b88570080bda29b75bbaaf00cf7e0d6c34b8cd556d8ad11ed"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/WallpaperMood.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "291d6cfdd2f4c2e1bd5cbe7d9a128ce96d221716a66e7d671cd8b5f529d035c5"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/WallpaperPlayer.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6d1e62759bcb0047e53e404312d8979f3747fcec4a4e62b1bc1ee69af0070c4d"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/WallpaperRotation.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ea3a003b467c86cf069f17c0f7f7f80c1834853a7c407b271867d09c134db817"
+    },
+    {
+      "path": "launcher/app/src/main/java/com/gathin/tvhome/WallpaperSize.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "149e8f0412aed7a474bba09e0abb7d4618c1692b9c3e9b57619c3d798a6247cd"
+    },
+    {
+      "path": "launcher/app/src/main/res/anim/app_open_enter.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f000578633ac93e602d1beea25c9e37dc3d4b773708db86438b359ebd9b43f83"
+    },
+    {
+      "path": "launcher/app/src/main/res/anim/app_open_exit.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ddd07d22c5d7ed474321320cac7262866ed8cfa066c87ddd7b10bca6959dfd65"
+    },
+    {
+      "path": "launcher/app/src/main/res/anim/tile_enter.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "767155e053621cc074d107b5cdf3ea2b11496b1fb3fd16dccc5a70e054d3127b"
+    },
+    {
+      "path": "launcher/app/src/main/res/color/pill_icon_no_internet.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "05fa7b144cb0b5885e4669769d568b8ab47852ba3043e7a81419cfc708d5a522"
+    },
+    {
+      "path": "launcher/app/src/main/res/color/pill_icon_offline.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c4d282fbed9bc68352153ddacd5ae0b4da45239b949e9b06a286d7ee64213f8c"
+    },
+    {
+      "path": "launcher/app/src/main/res/color/pill_icon_online.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8eab9041c36756aaf9cd94516457ca836877687b8cfe303e2003fd2ef0ffa16d"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/add_app_card.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ea3e58f1b2dc63ff8b82ae21cbc423cb249f9aae01ac899b873728090a6ccff5"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/banner_tv.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "64c01ed6320b96d9d951df7e0846e8f803e0bb034e43e7ed5bbcbda579272957"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/glass_panel.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "9bd9f3648238f474f763b02b7b1a4c814a1fcf608296f859eb0153029c8b2422"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_apps.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "0bc642585780c3005e853cf2a403f14b5865a08908b3dead3cbf4d1a9523c603"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_apps_pill.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "3fb1766959ebe83685e59c696d099dc7df3407d71ff3c481b1a6004e636aa294"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_av.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "577dcc2d2001bc90de9a5764f1e09a4485354615c31d1904f4b5d93f92134ae6"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_ethernet.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c2ebb060e883d95fac9e56a17248a7179f7cce31b1219fbfa82de5848fae0e75"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_home_settings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f91be0a654fc03b18bdaf5962280df3955a3ffe1c1b92ea73f4bdfca40b2c952"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_home_settings_pill.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "59f6500d0936af52ac66e67ecf54a629b7a9f62f799253199ce3e37c2aa231db"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_input.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1ad651b37e5382c7920acbda54987ca517135639381b254fc4d3eaace00bbdd1"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_livetv.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2ddfa22b6cda7a59a3cf69a0d9b163b2e7e78bb214365a205a9282b6ff53263b"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_lock.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "4f01b45a74b7898b80dd4d401e751774795b52c18ed565d2b1c71fbbfcdf0840"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_picture.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8ce6b2f5047c8287c3b909d9ce17f3c52a53a05c21600ff44abfe842d69b077b"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_settings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "d5cf96ccc4a5c5cab60f7b8f55f1b27265b9ea81e156c65a24c0c6161b1e1a68"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_swap_vert.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "79a334332230ce4d455c117e6ebda9cca184286e02cff0ab05052b1fbad84855"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/ic_wifi.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6bc42847bef5584b04441018f5f6e5fe3c4764e5ef8d1201586fc104cfe08e40"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/input_row_bg.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "acc22ffb75bf421f06c5ce7df8fec7bb0b0c881072df223a3b8a60bd3d890add"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/library_check.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2ec64edef608b87e4282bb30ad562bf634c3422f6805bb261f9553aefb500ff4"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/pill_bg.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6fc6986c0420fd6fe62ce39d13777db99021cd8fe091ca52d663dd0d29903c81"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/pill_text.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "775b66373cd927b517b0bfeeea4d3a90112cfbe765dfddbb4e91cd12d01062f6"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/pill_text_dim.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "37446f4c4f84b790984bea931ed263b51e1b9525706a9d2cb4ad5202a859a781"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/pill_text_mid.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "fb9f802fa2d7d88cafb5a46fb74119115b0981acc0d60c09fb5cac73b2629c02"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/race_bar.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "68e0098a2c9e18d2d278ca25a58eb689199d77c4ab94c4ffc60bdd6975f2149d"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/settings_choice_bg.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "fd0d0f35e2a3993ecc49291dab27885755cb454909b0447a1fe2c78c0bc1f79d"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/status_dot.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "adec9f93c6a2d7152cd23417e4184227d5a6fe87cd9d58ea4925e44bb51b3100"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable/tile_bg.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cf05ccea388fcb264df21c86cb1e6642c9412d6ed98d815a91f62988c7b40b5d"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable-nodpi/banner.jpg",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "839c222dd3b2408f955e9af2b1fd5c22314c8873768b55d941c743dcc49f89ef"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable-zh/ic_apps_pill.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "303efffed1feab8182e641bf268c40d77fb3b9af82930c29a03ba9910be11045"
+    },
+    {
+      "path": "launcher/app/src/main/res/font/outfit.ttf",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade"
+    },
+    {
+      "path": "launcher/app/src/main/res/font/outfit_extralight.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b6062a6f7face99fb953bd32313bfabcc9d39e207803f1800c912e474e31c400"
+    },
+    {
+      "path": "launcher/app/src/main/res/font/outfit_light.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "19fd9e19e78a2020924c4a9d90bbaf47801a027ebb8aec5a2bc8f5130317bb9a"
+    },
+    {
+      "path": "launcher/app/src/main/res/font/outfit_medium.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cdd6a75c36e973e5805e512de51c9a3f0ac22f94c703af70c8d1e5a031e08bc8"
+    },
+    {
+      "path": "launcher/app/src/main/res/font/outfit_regular.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "0c0e792bb2497fc9272459f0d2842887897099e2242aacfc4c409e3539f3a492"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/activity_launcher_settings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cb149919d29593d12bc312d63b731da102f3fd14adbe474011bad2c69c4b6520"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/activity_main.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8be4e911616702396433f059ab45145fe8a4c7a2bc83dccc13a6f861249b4cfe"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/activity_quick_settings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "a95f9677379f4107179c1cc0232d0febf537a9c9c369604aed7fc4a315f36f96"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/dialog_card_prompt.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c5108e829681549a1cc84c12b0f2085d599741aed045cf70046d505c5ed5fefb"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/dream_clock.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2c969d43a5846ce5e7902b756404cd213113729b491bd9ded770237335ac1b89"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/item_app.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cc2046e40ecf46d634076ff5a85b8b8f3980d3174564b3ac9f2f63754d73cfdd"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/item_card_row.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "85fe06f1b74685b5c6180de8740fda30bcc7fa3110325271351dac9efe79b5f9"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/item_input.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e0ed8cde235e77c1df0d8256fcb09088d69f6dacda9da15c2dcce1579bf12601"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/popup_cards.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "dbc32438f7496269b24fc9d2cc1c6b98aacce02b4360a7d38de2df9eae31831a"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/popup_inputs.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "3da21a7b5e6abe8dd2bc6955b67191e736b9259dee89ebb2b9a8305c1258fb7d"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/row_app_library.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "48d9f6efde32eef829feb55924bf59704063bf2935739b0a5766a56cdc95da39"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout/top_app_button.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "07e99c0927557344448a9baf1a6043609ba23ac1f8e131f69b1088c01a514c67"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout-iw/activity_main.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "4058e7d2584c6eb9d501732bc7e3c408823244c75be50c27680b266be856cad4"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout-iw/dream_clock.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ae8e2b110cfa19018516dff464fe30c1b40012023639366180f8eb41187bc3ee"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout-iw/item_input.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "15520949039bf072fc708060430b62f4f0a96d9fadeb108fd0c0e44b1f5e07ce"
+    },
+    {
+      "path": "launcher/app/src/main/res/layout-zh/row_app_library.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "48d9f6efde32eef829feb55924bf59704063bf2935739b0a5766a56cdc95da39"
+    },
+    {
+      "path": "launcher/app/src/main/res/mipmap-xhdpi/ic_launcher.jpg",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6460d3b890488434417f50633b843af88914bdd82fb8f8c5488046e59c3af100"
+    },
+    {
+      "path": "launcher/app/src/main/res/raw/keep.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f46838916de16cd28da6bf6f1e3a2fcda9e6a1cda512556a9222ba7d88d0ccab"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1cb7f78f71a361bc9d152825dadacc3712df623411bc6cb42e4cd1b933769f81"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/config.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "7be8166771db59763cb0c4a3b6a66d83507027c6ac2c499553e19727b7726c15"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/fonts.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ecd98b86c2eac1fd838df6b09a1e5bd5dbae09e370a0d3773d7493bdd0939d27"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/lunar.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c1bc5edffc1ff2dc74ee2c5fa566eebae4f6964d6d22e62bf4b0b376e477d289"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "a9708f52248d79da292390b9d239bc2d51dfbdf23aa03561a6fd899a15a38173"
+    },
+    {
+      "path": "launcher/app/src/main/res/values/styles.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5ca6466bbdccc358686055218999aab9efba0e7b3003da0068dcd422550627e7"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ar/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ar/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "58771eee49b8c01c74a6a575b158e80301c27747dc8d8e8f9d874d576bcfba49"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-b+sr+Latn/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-b+sr+Latn/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "522c0b7059bbb51f16b34cb257dd486239560beac44f292707ef8920f8471727"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-bn/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-bn/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "7789bc15c4623af7c048455e0e91827fd0da6c1cff39e3c05872b22a1a849372"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ca/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ca/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b5f883661adb132a94c5cbdc0e4a22e1e8acb5b2d774f4253035c9c42dc0700e"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-cs/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-cs/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "3e8fa34e39a2a86afcaa1d8238a46154e492d33b7edebf1a6b05e663dea773e4"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-da/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-da/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5f27a1314fb9f159b89cedd9ce49c5799fa22dcd239a1145ede63cc438e6f2cc"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-de/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f0bb740f81e3fdb9eb4aa5ad6c5f7f1d75193576761566e7e1c29130e147be53"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-de/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-de/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "eb67b0f9e45b5cc9463a9ae3adbdf0394a139392416843685e2b58359f494c62"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-es/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1ee7b3fd8a1b0a76e65f5f0a88e9665eb50cdb4d5ab0c1bc78afc3d30207c65e"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-es/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-es/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c1fd6eef9ba80fd053940b52a9e8cfb85391d8c734e723e65ae6302135e233ef"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-fi/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-fi/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "95ccdcd06c8eb165d2b602ebbf9fa1ab1b6452a8f819047374fe07868e2b31c5"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-fr/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-fr/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b289624d9023aafe7eba08085ffe2a25b504707efc0b620840641f9bca5f2205"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-in/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-in/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b6281d2846c43203176c08c5e0fcfca4946043ea18e927a29bb72c6e7435a910"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-it/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-it/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "13696f883066ea73b9ec2dd4e41c8d6c2640f94f1067bcb3825e247de4b7f58b"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-iw/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "bc3b3570c365471f1dbfb77a8c033520ab9c5f8728d794e23129b10516859277"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-iw/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-iw/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "d51386facdb30167188cfcb04c53a3d8960b74fa8107bc5f29e3df756f754b6b"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ko/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ko/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "cb52ebb60059acb02666c6f52de7f5c44492983aef71727e102aec898ea8bfcb"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-nb/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-nb/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1c128c3e11717dea606eb837258e9ae761397a0b19ae0dc6f42bc6feb1889d1f"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-nl/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-nl/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "168450eaa7a3442633f2e03c392e0487757934c5f6a3c0ab20db97a4a41af80f"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pl/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pl/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8af55d673b336743dce393fe1f7200b3c7efcce58d0dd1b2c3c237eaabfb5956"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pt/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "483e242c470159df63bb2b31bba2d6a4e2bc8295db992089836506e6c46c307b"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pt/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pt/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f1f9085fdc3d6f311a9af99bea8784f8cea6ef39111d58b95d58f01b7255c910"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pt-rPT/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-pt-rPT/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "2d7182d73572cfa3ac4bd0480b12d67fa07d9c8fd66a8acdd75b1c0f09ca11d1"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ru/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "bb2fe02e6f92dc3dc81e1ab413d676031fa65659010169c7517b5de4bb4a7498"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ru/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "509ac548a36c9dd0e45adbfedf73d81f4d58e52de1261993cb24f5a59ea51788"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-ru/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "03cc6a09e61ee67c4388eded52d67cd2b68784615e341daa85821156e095e8bd"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-th/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-th/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "4b7adf3ed7cba9397908637c290dcda1b2c16c59b6dccb81ebbdd837293302e2"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-tr/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-tr/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1f98eeaf6e407a69683253841ca64ee929c77775057f3a88eb277a160c636ff5"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-uk/bools.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e5e6253129630d36b2088e1c9e2d48c719c785abba05b0a15dbc75ce14dea087"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-uk/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "fc9421f6bdc4471fd5d0684ab2f30f5b8255344d1e3e8b380d0b8bc3049ab4f4"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-uk/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "60a3d7c5427d13255889c3ad56da32164a1777aff4d7030d7305790e85dc567d"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-uz/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-uz/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "feac6025c8e49ee928307e24e949b3d1d26ddb90f7be39fd6b113efcf129370d"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-vi/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "78a2085d0799954ae17267b3d3b8b44e2e0be4977e78f5bf54e29ac48520c0d0"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-vi/fonts.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "964014fcb21015287dee488b827b70e990ea400f27d92784ee709d73ab29a6fe"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-vi/lunar.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "70956896bb1e29d4865406563a11162aad3171911dec49e15211797ebde6413f"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-vi/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "1d571115632c7703dc2daaa6857198042f1124d6c5d486c801a733d069fc8bb4"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-zh-rCN/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "741de382555f2cce53033a7e9c42dff1e118330e8fc1de3903ed1f2790a44b76"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-zh-rCN/lunar.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6c118d61b4efb4f51dfb2ee8fcc0d18be8d5c92d60060db7bec5cc42987cc047"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-zh-rCN/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "72e7f452dd9d43a9174034e161deb8353a6cf995cb9ec6440d814aa3f55545eb"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-zh-rTW/clean_strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "741de382555f2cce53033a7e9c42dff1e118330e8fc1de3903ed1f2790a44b76"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-zh-rTW/lunar.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "efe0461898e55e35b202407c8bd5d1e40e707ae3b26673ddb0dcb4c6da54005c"
+    },
+    {
+      "path": "launcher/app/src/main/res/values-zh-rTW/strings.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "39ff1f134851fd0ffd547e79bb540043c6f57bf27ed275dccfa7bab35c82cb7f"
+    },
+    {
+      "path": "launcher/app/src/main/res/xml/home_key_service.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "692d92badeb3cc563104c1301359390eb5127638ca2e0ec2c485fc762bf3c8cd"
+    },
+    {
+      "path": "launcher/app/src/main/res/xml/input_key_service.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c08ada182aea453e3813e440da8a22b1118b8099c60f00f9b2923e110ca13905"
+    },
+    {
+      "path": "launcher/app/src/main/res/xml/locales_config.xml",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c1c403deec62b1dbe877d7dcba9ca6b165342a55a0c73bdc7ba75fcc2fd4e1dd"
+    },
+    {
+      "path": "launcher/app/src/test/java/androidx/dynamicanimation/animation/SpringFrames.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "7dd0e8b65dce8b51435a9db22db1d48e435e3b2bf904f15375d71f0b7a0d3aa4"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/BannerShapeTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "72455315c4992dcb3bc30ec6441d8b5ce3895264f9cd067037b9c256bb649ce5"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/CardFeatureTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "878f7e091d55e655941c38c789579d5a661f3aa9355ebf843c615080a1e2359b"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/CardsTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5869aac21fb968b14ecd1c69203c241dd94c4d6140c5ef9e78be2648c72963fb"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/CleanGestureTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "0e5ea751546417158d1401ff2bf091c6a34f9dca9890400404db87d9e935bb46"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/CleanStateTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "4c26a771308d3a39258bf36705c0a20a3cb4f7a79c6d05dab4b69263525d394e"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/DockCornersTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "d804d2d096a41c3ea95092099882b31b815ce4be971a86087004f20b4cdc885c"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/DockOpacityTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "310368cce023153aac274928699a1ef6042b28816f5a9eff099a9bfd7c14dd07"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/DockSlotsTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "09f2fd407351ee088f4a66004571b341dfe81472e920bfa32aa67e52d1abf6aa"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/FestivalTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "906ffe27739c964b716a0fe3c209b71ceb1a2292a182a6de70c5bb1177137ec2"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/GamepadPassthroughTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "afa4aaea8c62ceac29e66b52bbc6892148da1d8f3dde2ff7a472789412592a5c"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/GlassStyleTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b08d5795f326d5da1b1e9e1f3250f5455011363c07f24cac19b0dd75340c5d6f"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/GlowStyleTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8a06ed2e20405839d09ac2bfb3220fb70ad1523efe87bcd232c848d7307e1fdb"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/GridNavigationTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "87b3b3adf197889481529e77a4b1ce51ad599f1235bb83b4bb5fbdc43e5f3885"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/HomeKeyServiceTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "df2fd4a7463b6cc0b0b887c066ab1c10770979e0b01ffe60fa648d0c54ce6454"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/InputNamesTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "ca214f9f05dc6b8def1758d4ea6f916e8c79d91e07523cd588f5cb52cf731812"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/InputSourcesTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "12eb57309598282a747bf3424282fde0531c29fb6ab3a689c8fb154c4d37d210"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/LaunchActionsTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "bbe90525d9e1057712a0b613ac2e61195e664957d49da6c4147b86b82145476d"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/LauncherLocaleTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8d7201534a7910999d96ca51a389b13ef54ac1ea51d71aa09dc5d2fcb57d568c"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/LibraryAppsTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "fe5831d2fc06cba3f5979f70fe3c342a80b032c7371ed14645d5ad53260c1358"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/LibraryLoadsTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "6e0fc186fa83afdc66b3c88ab8f222d49569850c422dd5faebe3f71ea55a0e02"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/LocalHomeUiTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8411a0e9439ab074fa23ab3d2bdb46c7a0d02b8d89f9b7edbacf2eb6b84aa336"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/LunarTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "884081a2b56c7f87b580e01bb558e3427f295e2bfc82d70b75f39d9a1b3703c0"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/MemoryTrimPolicyTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b0da093c267fe0cf91dc62fdc5a220d1b5252696dd000ba33d2b71ce8fc466a6"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/MotionTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "945f060a0f95aadb8b3d974e22cf45e151d6d53e082ee4bf807cce02fa763353"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/OpenOnStartTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "0a0dc11431dd50a553f486f707f621f27ca32c423e5bea8d53cc8b10dfafcef6"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/OrderTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e61ef59fa0b7213f447ad80cb442b0cdf2ef88e4ddd92260de47c42012ac6510"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/PackageMapTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "20ddd54c98d1b3c8c196f26dd4cc66ddd6eeab08436c12e8a2a3cc106ab69720"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/RaceWeekendTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "449c4e3828d15d49d205d868b45af05ca893eeff75ed508665c571e67715a175"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/RemoteKeysTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "31b7db1bc0b17578e426237ac43be048cd13d7846831e51edeeec627ab8fa203"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/ShamsiTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e1a3e20473550bf2ba80d640fab5e54332628b65ff83f22a84aeb7be1cc2797e"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/SkyTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "3ef7eec407ef828f61140449c91f4c040b884c0f6bcf15ae20bbc96358a7d633"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/StatsTextTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "d559dd792a4ddd8134845d5277fe96e916d99197fa5d7add91dc22f73d7b2dc7"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/SunTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "a14f1d6e7464778587e5fbbca6b29aca5b897a9c1fdd39a93704bc4930e23ee6"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/ThemeFilesTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "37b3e12659be4a2ba3eceb41d649d27c043d072f723bc6d50b9ee20a3586f36f"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/TileFitTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "4d112076bff2e3e0299a69e379d5b2fc71cda1fd0e0b3e3622380896b6ece94c"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/TileRefreshTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e6f6daef1b74b2502753a607de688ddfa5e12f290b7df01c63ba4e388e8e487e"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/TopFadeTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "36d37d3d914a51fed2fe9b3beaee98af71cb9e4a833afb4879dcd6f3bbda137e"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/VideoWallpaperTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c347b2a87d6255b963a7910c211d52360e1f6ed1ca8c270048f39fd06c301b0c"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/VolumeKeysTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "9c2fa2a2299bcf50bef703c4ed767ed77af2250c6a0c8518261996db94281eb5"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/VpnPillTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "f199d6364a22c27adc1098dd1c7b548b8a0b3ba6b4b8a60f8160f8e6eed996b2"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/WallpaperCaptionsTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "001f4a4399f928252a1f51edb415ef5c39d2ba4557696e25dd35e189920e9ec6"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/WallpaperMoodTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "8a243fd854738912a393db83b2c6321a0cabc7b60b1ab28a95bf75fe5e8e6350"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/WallpaperRotationTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "0599c0ec46aaeecd52ddef3a7a5dd689c57a316459534d5b858eb6c0821ea589"
+    },
+    {
+      "path": "launcher/app/src/test/java/com/gathin/tvhome/WallpaperSizeTest.java",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "84e7901d0ff61a237362edb71bbeb369bb840525d4510bd6e78865d247fe3a50"
+    },
+    {
+      "path": "launcher/build-and-install.ps1",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "5eab4a1a81e84a3983835e01252b84006c5b871e212d62072298b69e8242cb66"
+    },
+    {
+      "path": "launcher/build-and-install.sh",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "431381b317d0f3b503da1e3398fbeeaf1ff2e68b17f07ef5cab2807885bc0781"
+    },
+    {
+      "path": "launcher/build.gradle",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "91b65994e5ad2de9a71942397325b0ca7677bf436191759998e4c34c2d627ea5"
+    },
+    {
+      "path": "launcher/FONT-LICENSE-OFL.txt",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416"
+    },
+    {
+      "path": "launcher/gradle/wrapper/gradle-wrapper.jar",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17"
+    },
+    {
+      "path": "launcher/gradle/wrapper/gradle-wrapper.properties",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "e4210195744b69201490648283ecc9de614d8d48ef95eecb7efc0a54dee80dfe"
+    },
+    {
+      "path": "launcher/gradle.properties",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "b331e3e3df27b8f664de897cdc2856e0e73a1a41a1c5741e018423dc167927c0"
+    },
+    {
+      "path": "launcher/gradlew",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "a3648413b47ef77af21d5ebc36c687c7d103aaef3e17f33de7d4f080a6f300a3"
+    },
+    {
+      "path": "launcher/gradlew.bat",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f"
+    },
+    {
+      "path": "launcher/settings.gradle",
+      "origin": "CleanYourTV pinned source + local changes",
+      "source_sha256": "fbd51b798c244485eb32a0aa11c45570d5d243df03ce0623c5c147dde41bd14c"
+    },
+    {
+      "path": "custom-tools/clean_install.py",
+      "origin": "local adaptation tools",
+      "source_sha256": "31cf016dcef6968361230e0f7ed742de0029acc7978be701fe91dc01c19bb62f"
+    },
+    {
+      "path": "custom-tools/clean_snapshot.py",
+      "origin": "local adaptation tools",
+      "source_sha256": "450745d411720180cc92fc91611cce578602d38332b1f27f19e61227eaac9494"
+    },
+    {
+      "path": "custom-tools/clean_tv.py",
+      "origin": "local adaptation tools",
+      "source_sha256": "430642166385f01edea4bdd3e05ef42654e429ab40c8958de5f4476d48cef5ef"
+    },
+    {
+      "path": "custom-tools/restore_aerial.py",
+      "origin": "local adaptation tools",
+      "source_sha256": "517c23cfa5a1c4e6d96e684e2f2391628d0f72371a68be8b67b503ca8b424cfb"
+    },
+    {
+      "path": "custom-tools/test_clean_tv.py",
+      "origin": "local adaptation tools",
+      "source_sha256": "d370ad5d6640cdfe8b8f5de406ab238d9d43eca5ffe7e23fb574e98e9ada4597"
+    },
+    {
+      "path": "custom-tools/TV.ps1",
+      "origin": "local adaptation tools",
+      "source_sha256": "0d47be9794fd21b7b12c59df27a91f13bc9692ca5ccad40a4d9de14539f20589"
+    },
+    {
+      "path": "LICENSE",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "e0941eca3b403700368b495fd9a91af4e15242fabb992ed27af95c0d4cdc6f83"
+    },
+    {
+      "path": "LICENSE-AERIAL",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "cb77d791da468f1ac31ff4ad9176ffa8833de3c4b91efc1d6e0a259da37e8c29"
+    },
+    {
+      "path": ".gitattributes",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "0028b087128f4c05ac5b6ca99d0c6c56eee6ea3fc254f38d02130c5111758c22"
+    },
+    {
+      "path": ".editorconfig",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "85fd220517f82a2ed0151c3ee327c530b60a92c9ab359fb6c8aa8ef4c7c7ea6e"
+    },
+    {
+      "path": "tools/tv.py",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "d0c854c0aa9ea44589ff745b29d0c56134fcf5721b51ad54f2fd6a403d9c4fc2"
+    },
+    {
+      "path": "tools/theme.ps1",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "c1046d0d7be3b979dc2b0be7613acc12af0855b1626c54ddc5f99e542a3becfc"
+    },
+    {
+      "path": "tools/theme.sh",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "bc59136b44d1534c2b3460c7158809804ca5ac7639f8c21354e503b7ff22af26"
+    },
+    {
+      "path": "tools/theme_restart.py",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "1e81825eafd3f9d7cf0f275023a2b12759e25e1464c33e4c97722642ec353e51"
+    },
+    {
+      "path": "tools/b64push.py",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "32228798b10022dd9920e265cb5a2098a879f30c503c9b124bd0c73a03c1898a"
+    },
+    {
+      "path": "tools/adb-closed.py",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "e5a5c78824f53e18ee00ee5d95cdc80d61d185128f5faf428c87b029b0989715"
+    },
+    {
+      "path": "tools/requirements.txt",
+      "origin": "CleanYourTV pinned source",
+      "source_sha256": "68e6c2f07fd8c25a561e4ebb18cd56b10832fddfd33295152dee3179ced21c58"
+    },
+    {
+      "path": "docs/LOCAL-FORK-AGENT-GUIDE.md",
+      "origin": "local adaptation documentation",
+      "source_sha256": "a9b80857a13db8897371f94a2ee9a4ee44bf68dffcd77c9c0eb73caa6a87784f"
+    },
+    {
+      "path": "docs/LOCAL-FORK-COMPATIBILITY.md",
+      "origin": "local adaptation documentation",
+      "source_sha256": "0810bd3d13509dc5a31fa751b31a493d5fb417a66156cd2121ed19d816806d96"
+    },
+    {
+      "path": "docs/DEVICE-REPORT-TEMPLATE.md",
+      "origin": "local adaptation documentation",
+      "source_sha256": "82f5b79301680f001d9a87261c955f46c854774d3922b70cf37f72acdc7add2d"
+    },
+    {
+      "path": "docs/device-profiles/device-profile.example.json",
+      "origin": "local capability profiles",
+      "source_sha256": "79f7bcd63d021ebcc71ae5cc7077153f9cee41e8c464d7ad795accd513e65954"
+    },
+    {
+      "path": "docs/device-profiles/xiaomi-mitv-mftr0.json",
+      "origin": "local capability profiles",
+      "source_sha256": "779e4b64b6ed0ff20867f18b722072252bb18bc395046c7e00ab8db8f758d57b"
+    },
+    {
+      "path": "companion/android/app/build.gradle",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "acf5779e0980907f27465eadf419b24a5ffff583e2efd58c626344289f8e633b"
+    },
+    {
+      "path": "companion/android/app/src/main/AndroidManifest.xml",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "089ac1b5c0a1e0a74eaa7110f32d5e0b0a200aa8bf73adb029442ddad265f60c"
+    },
+    {
+      "path": "companion/android/app/src/main/java/org/cleantv/companion/MainActivity.java",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "a40c1f8539f667c57fb680d5b30ac257a760577e247052623994658dfe2cd805"
+    },
+    {
+      "path": "companion/android/app/src/main/res/drawable/banner.xml",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "f3c81b22b00e0dd76aaab9dc55d70fc501af3d88b54a1635832bd8ec7617a844"
+    },
+    {
+      "path": "companion/android/app/src/main/res/drawable/icon.xml",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "a914a5c883670f432e8db65a772b4d303000b046969e6c05009f6d4faf39951d"
+    },
+    {
+      "path": "companion/android/build.gradle",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "9c150f6618daae72ece6ec986b0134927740570dbf2c88ec2a6a7fd2a9a17d28"
+    },
+    {
+      "path": "companion/android/gradle/LICENSE",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "9536d88ea948603d18e232a13f5958d67807cd80828036b082bff171d2cf0703"
+    },
+    {
+      "path": "companion/android/gradle/NOTICE",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "c2de5fd9adc7ccc4e1382a0e1f38ec6e14f8ca6e28d3c20289fe80353b019aa1"
+    },
+    {
+      "path": "companion/android/gradle/wrapper/gradle-wrapper.jar",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17"
+    },
+    {
+      "path": "companion/android/gradle/wrapper/gradle-wrapper.properties",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "e4210195744b69201490648283ecc9de614d8d48ef95eecb7efc0a54dee80dfe"
+    },
+    {
+      "path": "companion/android/gradle.properties",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "bcec3f41f03e1fcecc807afe61c5e1e8c922a1dfd8141bb684431b93b82770fa"
+    },
+    {
+      "path": "companion/android/gradlew",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "a3648413b47ef77af21d5ebc36c687c7d103aaef3e17f33de7d4f080a6f300a3"
+    },
+    {
+      "path": "companion/android/gradlew.bat",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f"
+    },
+    {
+      "path": "companion/android/settings.gradle",
+      "origin": "TV Companion 0.1.3 local source",
+      "source_sha256": "3763579d09adf019cd9beb5da0b3a1c65c2693424b6bfea6ade0179a0aaea55f"
+    },
+    {
+      "path": "companion/scripts/prepare_network.py",
+      "origin": "personal network adapter source only",
+      "source_sha256": "bd0c7ef58ff0fee6bf36037a6e569f218aff60aeb3ff4e581ea9ef7479f0f8cb"
+    },
+    {
+      "path": "companion/scripts/requirements.txt",
+      "origin": "personal network adapter source only",
+      "source_sha256": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a"
+    },
+    {
+      "path": "companion/tests/test_network.py",
+      "origin": "network adapter tests",
+      "source_sha256": "4ceff7cbc17ef9843f21bbb1619b2cdd9363a6504f2f0ac644e7335d63ee0c66"
+    },
+    {
+      "path": "companion/LICENSE",
+      "origin": "TV Companion source",
+      "source_sha256": "38feb049f58ee8f24c2b7b17657b9f01653cec9df40b2c2044fcdd4400eee6ec"
+    },
+    {
+      "path": "companion/dependencies.json",
+      "origin": "TV Companion source",
+      "source_sha256": "00f189e6b2e71055cc8eecbb1f18c7d2dd1afe78a57058b8b3079012bfaabb53"
+    },
+    {
+      "path": "integrations/smarttube/LICENSE",
+      "origin": "SmartTube MIT",
+      "source_sha256": "da19a3738e3e6abf1646b5d1308a139c2963600dfeaf4722d72121852ab5c744"
+    }
+  ],
+  "note": "Hashes record input before public packaging edits; source export has final hashes."
+}

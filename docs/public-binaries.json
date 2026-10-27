@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "path": "companion/android/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17",
+      "origin": "Pinned upstream launcher or TV Companion Gradle wrapper; licenses in THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "launcher/app/src/main/res/drawable-nodpi/banner.jpg",
+      "sha256": "839c222dd3b2408f955e9af2b1fd5c22314c8873768b55d941c743dcc49f89ef",
+      "origin": "Pinned upstream launcher or TV Companion Gradle wrapper; licenses in THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "launcher/app/src/main/res/font/outfit.ttf",
+      "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade",
+      "origin": "Pinned upstream launcher or TV Companion Gradle wrapper; licenses in THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "launcher/app/src/main/res/mipmap-xhdpi/ic_launcher.jpg",
+      "sha256": "6460d3b890488434417f50633b843af88914bdd82fb8f8c5488046e59c3af100",
+      "origin": "Pinned upstream launcher or TV Companion Gradle wrapper; licenses in THIRD_PARTY_NOTICES.md"
+    },
+    {
+      "path": "launcher/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17",
+      "origin": "Pinned upstream launcher or TV Companion Gradle wrapper; licenses in THIRD_PARTY_NOTICES.md"
+    }
+  ]
+}

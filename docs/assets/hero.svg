@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="680" viewBox="0 0 1440 680" role="img" aria-labelledby="title desc">
+<title id="title">CleanYourTV 客厅版：清爽主页，再加上 YouTube</title><desc id="desc">功能示意，非实机截图。保留 CleanYourTV 的简洁主页、应用管理、壁纸与闲置时钟，补齐小米日常操作细节；在此基础上，通过 SmartTube 与个人网络配置打通 YouTube 观看和账号登录。</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#151e2c"/><stop offset="1" stop-color="#253a48"/></linearGradient></defs>
+<rect width="1440" height="680" rx="28" fill="#0d1118"/>
+<g font-family="Segoe UI,Microsoft YaHei,sans-serif"><text x="74" y="92" fill="#92d7bd" font-size="21" letter-spacing="3">CLEANYOURTV · 客厅版</text>
+<text x="74" y="176" fill="#f4f4ee" font-size="50" font-weight="700">清爽的电视首页，再加上 YouTube。</text>
+<text x="74" y="222" fill="#a7b0b8" font-size="22">CleanYourTV 核心体验 → 小米日常操作优化 → YouTube 观看与账号登录</text>
+<rect x="74" y="275" width="820" height="332" rx="20" fill="url(#bg)" stroke="#425565"/>
+<text x="116" y="357" fill="#f2f2eb" font-size="48">20:36</text><text x="118" y="391" fill="#a6c0c1" font-size="18">晚上好，把时间留给自己。</text>
+<rect x="106" y="502" width="756" height="80" rx="22" fill="#10171e"/>
+<g fill="#334854"><rect x="122" y="514" width="128" height="56" rx="10"/><rect x="268" y="514" width="128" height="56" rx="10"/><rect x="414" y="514" width="128" height="56" rx="10"/><rect x="560" y="514" width="128" height="56" rx="10"/><rect x="706" y="514" width="128" height="56" rx="10"/></g>
+<g fill="#edf5ee" font-size="18" text-anchor="middle"><text x="186" y="549">SmartTube</text><text x="332" y="549">个人网络</text><text x="478" y="549">相册</text><text x="624" y="549">设置</text><text x="770" y="552" font-size="32">＋</text></g>
+<rect x="122" y="514" width="128" height="56" rx="10" fill="none" stroke="#d9fff0" stroke-width="3"/>
+<g fill="#f1f3ee"><text x="955" y="319" font-size="30">CleanYourTV 核心体验</text><text x="955" y="355" font-size="20" fill="#a7b0b8">简洁主页 · 应用管理 · 壁纸与时钟</text><text x="955" y="428" font-size="27">再补齐日常小细节</text><text x="955" y="463" font-size="20" fill="#a7b0b8">三连 Home · 加号添加 · 可恢复改造</text><text x="955" y="536" font-size="27">进一步看 YouTube</text><text x="955" y="571" font-size="20" fill="#a7b0b8">SmartTube 实播 · 本人账号登录</text></g>
+<text x="76" y="645" fill="#81929d" font-size="16">功能示意，非实机截图。基于 CleanYourTV；指定小米实测，影音通过 SmartTube，个人网络与账号自备。</text></g></svg>

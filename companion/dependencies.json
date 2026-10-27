@@ -1,0 +1,25 @@
+{
+  "androidMedia": [
+    {
+      "name": "SmartTube_stable_32.68_armeabi-v7a.apk",
+      "url": "https://github.com/yuliskov/SmartTube/releases/download/32.68s/SmartTube_stable_32.68_armeabi-v7a.apk",
+      "sha256": "2130b23b17ed5cfd324baec81750a2be22059212b6ee17449f21cae2cb3a60d9"
+    },
+    {
+      "name": "cmfa-2.11.36-meta-armeabi-v7a-release.apk",
+      "url": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.36/cmfa-2.11.36-meta-armeabi-v7a-release.apk",
+      "sha256": "bd500e3d04e619e8d85e8ca196c8fd42de285fc5d3811e4cd3ee5dc355cd7dea"
+    }
+  ],
+  "build": {
+    "jdk": "17.0.20.1+1",
+    "gradle": "8.14.3",
+    "androidGradlePlugin": "8.12.0",
+    "compileSdk": 36,
+    "buildTools": "35.0.0"
+  },
+  "python": {
+    "version": "3.12",
+    "PyYAML": "6.0.3"
+  }
+}

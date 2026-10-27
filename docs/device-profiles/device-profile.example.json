@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "model": "未提供",
+  "marketing_name": "未提供",
+  "android": "未提供",
+  "firmware": "未提供",
+  "abi": [],
+  "tested_launcher_version": "未提供",
+  "validation_date": null,
+  "scope": "unverified device; collect local evidence first",
+  "components": {
+    "stock_home_package": null,
+    "stock_home_activity": null,
+    "live_tv_package": null,
+    "screensaver_package": null
+  },
+  "capabilities": {
+    "ordinary_launch": "not_tested",
+    "app_add_remove": "not_tested",
+    "physical_dpad_single_step": "not_tested",
+    "triple_home_both_directions": "not_tested",
+    "sleep_wake_returns_to_custom_home": "not_tested",
+    "zero_flash_on_wake": "not_tested",
+    "static_wallpaper_and_idle_clock": "not_tested",
+    "full_four_image_rotation_cycle": "not_tested",
+    "cold_boot": "not_tested",
+    "hdmi_real_picture_and_audio": "not_tested",
+    "full_device_rollback": "not_tested"
+  },
+  "power_mode": "未提供；默认保留现状",
+  "known_limits": [],
+  "automatic_actions": [],
+  "agent_note": "Fill only observed public device facts. Do not include IP, serial, MAC, Android ID, account, Wi-Fi, subscription, keys or tokens."
+}

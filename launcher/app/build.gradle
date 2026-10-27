@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Public builds work without a maintainer key. Partial signing configuration is an error.
+def signingNames = ['CYT_STORE_FILE', 'CYT_STORE_PASSWORD', 'CYT_KEY_ALIAS', 'CYT_KEY_PASSWORD']
+def signingValues = signingNames.collect { providers.environmentVariable(it).orNull }
+def hasReleaseSigning = signingValues.every { it != null && !it.isEmpty() }
+if (signingValues.any { it != null } && !hasReleaseSigning) {
+    throw new GradleException('Set all four CYT signing environment variables, or leave all unset.')
+}
+
+android {
+    namespace 'com.gathin.tvhome'
+    compileSdk 36
+    buildToolsVersion "35.0.0"
+
+    defaultConfig {
+        // Opt-in identity for firmware with a package-name HOME allowlist; see docs/devices/xiaomi-mitv-aetp0-dofus.md.
+        applicationId providers.gradleProperty('launcherApplicationId').getOrElse('com.gathin.tvhome')
+        minSdk 26
+        targetSdk 34
+        versionCode 12
+        versionName '3.0-living.1'
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            privateRelease {
+                storeFile file(signingValues[0])
+                storePassword signingValues[1]
+                keyAlias signingValues[2]
+                keyPassword signingValues[3]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            // R8 strips and optimises the code (AndroidX included): smaller APK, faster start on a slow TV CPU.
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseSigning) signingConfig signingConfigs.privateRelease
+        }
+    }
+
+    testOptions { unitTests.includeAndroidResources = true }
+
+    packagingOptions {
+        resources {
+            // Kotlin metadata pulled in by AndroidX's dependencies. This launcher is plain Java and never reads it;
+            // leaving it out saves about 14 KB of every install.
+            excludes += ['kotlin/**', 'META-INF/*.version', 'META-INF/*.kotlin_module', 'DebugProbesKt.bin']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
+    // Test only (never in the APK): plain JVM tests for the module card validators, src/test.
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.17'
+}

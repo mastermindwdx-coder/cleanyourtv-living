@@ -1,0 +1,25 @@
+name: 设备适配反馈
+description: 提交自己设备的脱敏验证结果
+title: '[设备] 型号 / 固件'
+body:
+  - type: markdown
+    attributes:
+      value: 请勿上传原始日志、账号、IP、Wi-Fi、序列号、密钥或订阅。未测试的项目写 not_tested。
+  - type: textarea
+    id: device
+    attributes:
+      label: 型号、固件、Android版本与ABI
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: 功能逐项结果
+      description: 普通启动、Home双向、方向键、待机、冷启动、HDMI、主题、恢复分别填写。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现、处理与回退
+      description: 预期/实际、最小改动、真实观察与保留问题；不公开私人配置。

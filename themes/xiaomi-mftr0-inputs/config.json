@@ -1,0 +1,12 @@
+{
+  "live_tv_package": "com.xiaomi.mitv.tvplayer",
+  "live_tv_action": "com.xiaomi.mitv.tvplayer.DTMB_PLAY",
+  "input_action": "com.xiaomi.mitv.tvplayer.EXTSRC_PLAY",
+  "input_sources": [
+    "HW5=23",
+    "HW6=24",
+    "HW7=25",
+    "HW8=-",
+    "HW2=2"
+  ]
+}

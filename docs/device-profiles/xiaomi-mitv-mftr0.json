@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "model": "MiTV-MFTR0",
+  "marketing_name": "Xiaomi S Pro 75 Mini LED",
+  "android": "14",
+  "firmware": "OS3.0.101.0.UFTMATV",
+  "abi": [
+    "armeabi-v7a",
+    "armeabi"
+  ],
+  "tested_launcher_version": "3.0-local.2",
+  "validation_date": "2026-10-27",
+  "scope": "single owner device; not a claim about every unit or firmware",
+  "components": {
+    "stock_home_package": "com.mitv.tvhome",
+    "stock_home_activity": "com.mitv.tvhome.MainActivityUserMode",
+    "live_tv_package": "com.xiaomi.mitv.tvplayer",
+    "screensaver_package": "com.xiaomi.mitv.hyper.screensaver"
+  },
+  "capabilities": {
+    "ordinary_launch": "passed",
+    "app_add_remove": "passed",
+    "physical_dpad_single_step": "passed",
+    "triple_home_both_directions": "passed",
+    "sleep_wake_returns_to_custom_home": "passed",
+    "zero_flash_on_wake": "failed",
+    "static_wallpaper_and_idle_clock": "passed",
+    "full_four_image_rotation_cycle": "not_tested",
+    "cold_boot": "not_tested",
+    "hdmi_real_picture_and_audio": "not_tested",
+    "full_device_rollback": "not_tested"
+  },
+  "power_mode": "existing power-saving mode preserved",
+  "known_limits": [
+    "Stock home briefly appears before the custom home on wake",
+    "Static launcher logical display is 1920x1080; not native 4K static rendering"
+  ],
+  "automatic_actions": [],
+  "agent_note": "This is historical device evidence, not an executable allowlist. Public setup-home remains restricted to this model/firmware; keep_adb defaults to false and requires explicit opt-in. Public 3.0-living.1 has not been installed on this TV."
+}

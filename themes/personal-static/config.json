@@ -1,0 +1,20 @@
+{
+  "wallpaper": true,
+  "wallpaper_rotation_minutes": 5,
+  "wallpaper_order": "sequential",
+  "wallpaper_dim": 20,
+  "wallpaper_true_color": true,
+  "rows_below_dock": 0,
+  "dock_row": true,
+  "dock_title": false,
+  "columns": 5,
+  "ambient_glow": false,
+  "app_glow": false,
+  "cinematic_home": false,
+  "home_idle_clock_minutes": 5,
+  "clock_wallpaper": true,
+  "clock_wallpaper_dim": 35,
+  "app_library": true,
+  "app_library_selection": true,
+  "tile_menu": true
+}
